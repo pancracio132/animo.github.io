@@ -8,21 +8,7 @@
 </head>
 <body>
 
-   <!-- Controles de música -->
-  <div class="music-controls">
-    <button onclick="iniciarMusica()">🎵 Música</button>
-    <button onclick="pausarMusica()">⏸ Pausa</button>
-  </div>
 
-<iframe
-    id="ytmusic"
-    width="0"
-    height="0"
-    src="https://www.youtube.com/embed/yFz1gP4MP-8?controls=0&loop=1&playlist=yFz1gP4MP-8"
-    frameborder="0"
-    allow="autoplay; encrypted-media">
-  </iframe>
-  
   <div class="card">
     <h1>No eres inútil</h1>
     <h2>Y nunca lo has sido</h2>
@@ -114,19 +100,5 @@
     </div>
   </div>
 
- <script>
-    const iframe = document.getElementById("ytmusic");
-
-    function iniciarMusica() {
-      if (!iframe.src.includes("autoplay=1")) {
-        iframe.src += "&autoplay=1";
-      }
-    }
-
-    function pausarMusica() {
-      iframe.src = "https://www.youtube.com/embed/yFz1gP4MP-8?controls=0&loop=1&playlist=yFz1gP4MP-8";
-    }
-  </script>
-  
 </body>
 </html>
