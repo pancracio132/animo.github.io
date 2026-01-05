@@ -14,12 +14,11 @@
     <button onclick="pausarMusica()">⏸ Pausa</button>
   </div>
 
-  <!-- Música de fondo (YouTube oculto) -->
-  <iframe
+<iframe
     id="ytmusic"
     width="0"
     height="0"
-    src="https://www.youtube.com/embed/yFz1gP4MP-8?controls=0&loop=1&playlist=yFz1gP4MP-8&autoplay=1"
+    src="https://www.youtube.com/embed/yFz1gP4MP-8?controls=0&loop=1&playlist=yFz1gP4MP-8"
     frameborder="0"
     allow="autoplay; encrypted-media">
   </iframe>
@@ -115,18 +114,19 @@
     </div>
   </div>
 
-  <script>
-  const iframe = document.getElementById("ytmusic");
-  const videoURL = "https://www.youtube.com/embed/yFz1gP4MP-8?controls=0&loop=1&playlist=yFz1gP4MP-8&autoplay=1";
+ <script>
+    const iframe = document.getElementById("ytmusic");
 
-  function iniciarMusica() {
-    iframe.src = videoURL;
-  }
+    function iniciarMusica() {
+      if (!iframe.src.includes("autoplay=1")) {
+        iframe.src += "&autoplay=1";
+      }
+    }
 
-  function pausarMusica() {
-    iframe.src = "";
-  }
-</script>
+    function pausarMusica() {
+      iframe.src = "https://www.youtube.com/embed/yFz1gP4MP-8?controls=0&loop=1&playlist=yFz1gP4MP-8";
+    }
+  </script>
   
 </body>
 </html>
